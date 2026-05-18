@@ -52,6 +52,7 @@ The Python/Pygame side handles:
 
 ## Circuit Diagram
 
+<img width="1028" height="1093" alt="image" src="https://github.com/user-attachments/assets/5022e35c-15ca-4fe5-b7d5-93ef80373365" />
 
 
 ---
@@ -183,6 +184,8 @@ The task also monitors whether the ADXL345 values remain unchanged for too long.
 
 This recovery mechanism was added because the I2C communication occasionally became unstable during runtime.
 
+---
+
 2. ```StartDataSendTask```
 
 This task sends the latest sensor and button data to the Python game over UART.
@@ -194,9 +197,11 @@ Main responsibilities:
 - Sends JSON packets over USART2
 - Clears event-based fields after transmission
 
-The fire and ctrl fields are event-based. After they are copied into the UART packet, they are reset to 0.
+The ```fire``` and ```ctrl``` fields are event-based. After they are copied into the UART packet, they are reset to 0.
 
-The fire_hold field is not reset after transmission because it represents the current button state.
+The ```fire_hold``` field is not reset after transmission because it represents the current button state.
+
+---
 
 3. ```StartUartRxTask```
 
@@ -210,6 +215,8 @@ Main responsibilities:
 The actual command processing is handled inside the UART receive complete callback: ```HAL_UART_RxCpltCallback()```
 After each byte is received, UART interrupt reception is restarted.
 
+---
+
 4. ```HAL_UART_RxCpltCallback```
 This is not a FreeRTOS task, but it is an important part of the communication system.
 
@@ -222,6 +229,8 @@ Main responsibilities:
 
 The callback does not directly blink the LED. Instead, it sends the command to a queue: ```osMessageQueuePut(ledQueueHandle, &cmd, 0, 0);```
 This avoids doing blocking LED operations inside an interrupt callback.
+
+---
 
 5. ```StartLedFeedbackTask```
 
