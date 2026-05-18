@@ -379,7 +379,7 @@ python main.py
 
 ## Libraries and Assets
 
-- ADXL345 Library: [ADXL345]([Repo](https://github.com/arifmandal/STM32-ile-Sensor-Kutuphaneleri-Gelistirme-Kursu/tree/ADXL345))
+- ADXL345 Library: [ADXL345](https://github.com/arifmandal/STM32-ile-Sensor-Kutuphaneleri-Gelistirme-Kursu/tree/ADXL345)
 
 - Player Assets: [Void Main Ship by Foozle](https://foozlecc.itch.io/void-main-ship)
 
