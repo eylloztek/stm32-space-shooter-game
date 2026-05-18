@@ -1,0 +1,6 @@
+../Core/Src/adxl345.c:18:5:ADXL345_ScanDeviceID	3
+../Core/Src/adxl345.c:28:26:ADXL345_ReadRegisterData	2
+../Core/Src/adxl345.c:37:27:ADXL345_WriteRegisterData	2
+../Core/Src/adxl345.c:50:19:ADXL345_Init	2
+../Core/Src/adxl345.c:102:9:ADXL345_getAxisValue	1
+../Core/Src/adxl345.c:115:7:ADXL345_getGValue	1
