@@ -412,4 +412,5 @@ python main.py
 
 You can watch the demo video from here:
 
-[Watch Demo Video](https://youtu.be/xA2_12lr0Jk)
+https://github.com/user-attachments/assets/c3bea4e6-a3f2-4ffa-b572-97122040bf0d
+
